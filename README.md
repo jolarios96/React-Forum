@@ -1,2 +1,2 @@
-# React-Forum
+# react-forum
 A forum made using React.
