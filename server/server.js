@@ -1,34 +1,58 @@
-var express = require("express");
-var cors = require("cors");
-var config = require("./config.js");
+const express = require("express");
+const db = require("./config/db");
+const cors = require("cors");
 
-var app = express();
+const app = express();
+const PORT = 3001;
 app.use(cors());
+app.use(express.json());
 
-const mysql = require("mysql");
-console.log(config.host);
+// get users from users table
+app.get("/users", (req, res) => {
+  db.query("SELECT * FROM users", (err, result) => {
+    if (err) {
+      console.log(err);
+    }
 
-const connection = mysql.createConnection({
-  host: config.host,
-  user: process.env.user,
-  password: process.env.password,
-  database: process.env.db,
+    // console.log(result[1].user_id); errors because output is a number?
+    // must be a string or json object?
+    res.send(result);
+  });
 });
 
-connection.connect();
-
-// connection.query("SELECT 1 + 1 AS solution", (err, rows, fields) => {
-//   if (err) throw err;
-
-//   console.log("The solution is: ", rows[0].solution);
-// });
-
-connection.end();
-
-app.get("/products/:id", function (req, res, next) {
-  res.json({ msg: "This is CORS-enabled for all origins!" });
+// Create New User (UNFINISHED)
+app.post("/user/create", (req, res) => {
+  console.log("Created new user");
+  res.send("POST Request Called");
+  const id = 3;
+  const email = "user_3@email.com";
+  const username = "User_3";
+  const password = "password";
+  db.query(
+    "INSERT INTO posts (user_id, user_email, user_name, user_password) VALUES (?,?,?,?)",
+    [id, email, username, password],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log(result);
+    }
+  );
 });
 
-app.listen(3001, function () {
-  console.log("CORS-enabled web server listening on port 3001");
+// get groups from users table
+app.get("/groups", (req, res) => {
+  db.query("SELECT * FROM users", (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+
+    // console.log(result[1].user_id); errors because output is a number?
+    // must be a string or json object?
+    res.send(result);
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`CORS-enabled web server listening on port ${PORT}`);
 });
