@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jolarios96/react-forum/issues"
   },
-  "homepage": "https://github.com/jolarios96/react-forum#readme"
+  "homepage": "https://github.com/jolarios96/react-forum#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
 }
