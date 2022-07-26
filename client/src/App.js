@@ -6,12 +6,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hi there!</h1>
-        <p>First time?</p>
-        <p>Here's some links</p>
-        <Link to="/home">Home</Link>
-      </header>
+      <h1>Hi there!</h1>
+      <p>First time?</p>
+      <p>Go to our homepage:</p>
+      <Link to="/home">Home</Link>
 
       {/* <Route path="/home" exact render={(props) => <Home />} /> */}
     </div>

@@ -1,8 +1,15 @@
 // import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+} from "react-router-dom";
 import App from "./App";
+
 import "./index.css";
+import "./App.css";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -11,13 +18,17 @@ import PageNotFound from "./routes/PageNotFound";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="home" element={<Home />} />
-      <Route path="PageNotFound" element={<PageNotFound />} />
-    </Routes>{" "}
-  </BrowserRouter>
+  <Router>
+    <header className="App-header">
+      {/* <div>Something</div> */}
+
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="home" element={<Home />} />
+        <Route path="page-not-found" element={<PageNotFound />} />
+      </Routes>
+    </header>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
