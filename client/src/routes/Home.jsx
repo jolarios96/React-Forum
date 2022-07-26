@@ -16,7 +16,10 @@ export default function Home() {
         </li>
         <li>
           {" "}
-          <Link to="/page-not-found">404 page</Link>
+          <Link to="/page-not-found">404 test page</Link>
+        </li>
+        <li>
+          <Link to="/test-query">testQuery page</Link>
         </li>
       </ul>
     </div>

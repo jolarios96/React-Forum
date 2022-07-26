@@ -15,6 +15,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import Home from "./routes/Home";
 import PageNotFound from "./routes/PageNotFound";
+import TestQuery from "./routes/TestQuery";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +27,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="home" element={<Home />} />
         <Route path="page-not-found" element={<PageNotFound />} />
+        <Route path="test-query" element={<TestQuery />} />
       </Routes>
     </header>
   </Router>
