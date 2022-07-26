@@ -7,6 +7,11 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+// "/" route
+app.get("/", (req, res) => {
+  res.send("homepage");
+});
+
 // get users from users table
 app.get("/users", (req, res) => {
   db.query("SELECT * FROM users", (err, result) => {
