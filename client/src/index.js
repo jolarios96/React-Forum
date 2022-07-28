@@ -6,13 +6,16 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import App from "./App";
 
+// import reportWebVitals
+import reportWebVitals from "./reportWebVitals";
+
+// import styles
 import "./index.css";
 import "./App.css";
 
-import reportWebVitals from "./reportWebVitals";
-
+// import routes
+import App from "./App";
 import Home from "./routes/Home";
 import PageNotFound from "./routes/PageNotFound";
 import TestQuery from "./routes/TestQuery";
